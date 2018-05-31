@@ -1,0 +1,39 @@
+package com.nxs.channel;
+
+import org.junit.Test;
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+/**
+ * 一、通道（Channel）: 用于源节点与目标节点的连接，在java nio中负责缓冲区数据中数据的传输。channel本身不存储数据，因此需要配合缓冲区进行传输
+ * 主要实现类
+ * FileChannel  本地文件
+ * SocketChannel   TCP
+ * ServerSocketChannel  TCP
+ * DatagramChannel  UDP
+ * 二、获取通道
+ * 1.getChannel()
+ * 本地IO
+ * FileInputStream/FileOutStream
+ * RandomAccessFile
+ * 网络IO
+ * Socket
+ * ServerSocket
+ * DatagramSocket
+ * 2.open()
+ * 3.newByteChannel()
+ * 三、通道之间数据传输
+ * transferTo()
+ * transferFrom()
+ * 四、分散(Scatter)与聚集(Gather)
+ * 分散读取（Scattering Reads）:将通道中的数据依次按顺序分散到多个缓冲区中
+ * 聚集写入（Gathering Write）:将缓冲区中的数据依次按顺序聚集到通道中
+ */
+public class TestChannel {
+
+    //1.利用通道完成
